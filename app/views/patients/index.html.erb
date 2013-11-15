@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>Patients</h1>
+</div>
+
+<p><%= link_to 'Add a New Patient', new_patient_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Date of birth</th>
+      <th>Gender</th>
+      <th>Blood type</th>
+      <th>Medication</th>
+      <th>Allergies</th>
+      <th>Doctor</th>
+      <th>Med conditions</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.First_name %></td>
+        <td><%= patient.last_name %></td>
+        <td><%= patient.date_of_birth %></td>
+        <td><%= patient.gender %></td>
+        <td><%= patient.blood_type %></td>
+        <td><%= patient.medication %></td>
+        <td><%= patient.allergies %></td>
+        <td><%= patient.doctor %></td>
+        <td><%= patient.med_conditions %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, patient_url(patient), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_patient_url(patient), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, patient_url(patient), method: 'delete', data: { confirm: "Do you really want to delete this patient?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

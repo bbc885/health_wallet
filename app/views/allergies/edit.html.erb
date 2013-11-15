@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>Editing Allergy #<%= @allergy.id %></h1>
+</div>
+
+<%= form_tag(allergy_url(@allergy), method: 'patch', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :allergies, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :allergies, @allergy.allergies, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :allergy_severity, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :allergy_severity, @allergy.allergy_severity, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :allergy_classification, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :allergy_classification, @allergy.allergy_classification, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Update Allergy", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

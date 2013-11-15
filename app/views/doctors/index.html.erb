@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Doctors</h1>
+</div>
+
+<p><%= link_to 'Add a New Doctor', new_doctor_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Doctor</th>
+      <th>Specialty</th>
+      <th>Street addr</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.first_name %></td>
+        <td><%= doctor.last_name %></td>
+        <td><%= doctor.doctor %></td>
+        <td><%= doctor.specialty %></td>
+        <td><%= doctor.street_addr %></td>
+        <td><%= doctor.city %></td>
+        <td><%= doctor.state %></td>
+        <td><%= doctor.zip %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, doctor_url(doctor), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_doctor_url(doctor), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, doctor_url(doctor), method: 'delete', data: { confirm: "Do you really want to delete this doctor?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

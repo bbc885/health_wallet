@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Medications</h1>
+</div>
+
+<p><%= link_to 'Add a New Medication', new_medication_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Medication name</th>
+      <th>Dosage amt</th>
+      <th>Dosage daily frequency</th>
+      <th>Dosage daily time</th>
+      <th>Dosage duration</th>
+      <th>Date last filled</th>
+      <th>Date next refill</th>
+      <th>Doctor</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medications.each do |medication| %>
+      <tr>
+        <td><%= medication.medication_name %></td>
+        <td><%= medication.dosage_amt %></td>
+        <td><%= medication.dosage_daily_frequency %></td>
+        <td><%= medication.dosage_daily_time %></td>
+        <td><%= medication.dosage_duration %></td>
+        <td><%= medication.date_last_filled %></td>
+        <td><%= medication.date_next_refill %></td>
+        <td><%= medication.doctor %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, medication_url(medication), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_medication_url(medication), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, medication_url(medication), method: 'delete', data: { confirm: "Do you really want to delete this medication?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
