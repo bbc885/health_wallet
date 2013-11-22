@@ -22,6 +22,7 @@ class PatientsController < ApplicationController
     @patient.allergies = params[:allergies]
     @patient.doctor = params[:doctor]
     @patient.med_conditions = params[:med_conditions]
+    @patient.img_url = params[:img_url]
 
     if @patient.save
       redirect_to patients_url, notice: "Patient created successfully."
@@ -45,7 +46,8 @@ class PatientsController < ApplicationController
     @patient.allergies = params[:allergies]
     @patient.doctor = params[:doctor]
     @patient.med_conditions = params[:med_conditions]
-
+    @patient.img_url = params[:img_url]
+    
     if @patient.save
       redirect_to patients_url, notice: "Patient updated successfully."
     else

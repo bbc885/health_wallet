@@ -30,4 +30,7 @@
   <dt>Med conditions</dt>
   <dd><%= @patient.med_conditions %></dd>
 
+  <dt>X-Ray</dt>
+  <dd><%= image_tag @patient.img_url, width: 200, class: "img-circle" %></dd>
+
 </dl>

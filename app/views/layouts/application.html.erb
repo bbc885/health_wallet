@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <title>HealthWallet</title>
 
-
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css">
 
   <style>
@@ -39,6 +38,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><%= link_to "Patients", patients_url %></li>
+        <li><%= link_to "Medications", medications_url %></li>
+        <li><%= link_to "Allergies", allergies_url %></li>
+        <li><%= link_to "Doctors", doctors_url %></li>
+        <li><%= link_to "Conditions", conditions_url %></li>
         <li><a href="#">About</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
