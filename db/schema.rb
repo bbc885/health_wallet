@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131121230446) do
+ActiveRecord::Schema.define(version: 20131205222837) do
 
   create_table "allergies", force: true do |t|
     t.string "allergies"
@@ -47,16 +47,29 @@ ActiveRecord::Schema.define(version: 20131121230446) do
   end
 
   create_table "patients", force: true do |t|
-    t.string "First_name"
-    t.string "last_name"
-    t.date   "date_of_birth"
-    t.string "gender"
-    t.string "blood_type"
-    t.string "medication"
-    t.string "allergies"
-    t.string "doctor"
-    t.string "med_conditions"
-    t.string "img_url"
+    t.string   "First_name"
+    t.string   "last_name"
+    t.date     "date_of_birth"
+    t.string   "gender"
+    t.string   "blood_type"
+    t.string   "medication"
+    t.string   "allergies"
+    t.string   "doctor"
+    t.string   "med_conditions"
+    t.string   "img_url"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "patients", ["email"], name: "index_patients_on_email", unique: true
+  add_index "patients", ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
 
 end

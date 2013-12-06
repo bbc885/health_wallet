@@ -55,7 +55,12 @@
   <div class="form-group">
     <%= label_tag :doctor, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :doctor, nil, class: 'form-control' %>
+      <select class="form-control" id="doctor_id" name="doctor_id">
+      <% Doctor.all.each do |doctor| %>
+      <option value="<%= doctor.id %>"><%= "#{doctor.first_name} #{doctor.last_name}" %></option>
+      <% end %>
+      </select>
+
     </div>
   </div>
 
