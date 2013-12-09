@@ -1,9 +1,9 @@
 HealthWallet::Application.routes.draw do
   devise_for :patients
-  root "patients#index"
+  root "page#page"
   # Routes for the Condition resource:
 
-
+  get '/page', controller:'page', action: 'page'
 
   # CREATE
   get '/conditions/new', controller: 'conditions', action: 'new', as: 'new_condition'
