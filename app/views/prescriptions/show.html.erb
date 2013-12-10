@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>Prescription #<%= @prescription.id %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Doc</dt>
+  <dd><%= @prescription.doc_id %></dd>
+
+  <dt>Medication</dt>
+  <dd><%= @prescription.medication_id %></dd>
+
+  <dt>Patient</dt>
+  <dd><%= @prescription.patient_id %></dd>
+
+  <dt>Prescription date</dt>
+  <dd><%= @prescription.prescription_date %></dd>
+
+</dl>

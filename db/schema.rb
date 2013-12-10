@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209223521) do
+ActiveRecord::Schema.define(version: 20131210051213) do
 
   create_table "allergies", force: true do |t|
     t.string  "allergies"
@@ -75,5 +75,12 @@ ActiveRecord::Schema.define(version: 20131209223521) do
 
   add_index "patients", ["email"], name: "index_patients_on_email", unique: true
   add_index "patients", ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
+
+  create_table "prescriptions", force: true do |t|
+    t.integer "doc_id"
+    t.integer "medication_id"
+    t.integer "patient_id"
+    t.date    "prescription_date"
+  end
 
 end

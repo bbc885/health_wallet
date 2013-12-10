@@ -1,4 +1,21 @@
 HealthWallet::Application.routes.draw do
+  # Routes for the Prescription resource:
+  # CREATE
+  get '/prescriptions/new', controller: 'prescriptions', action: 'new', as: 'new_prescription'
+  post '/prescriptions', controller: 'prescriptions', action: 'create', as: 'prescriptions'
+
+  # READ
+  get '/prescriptions', controller: 'prescriptions', action: 'index'
+  get '/prescriptions/:id', controller: 'prescriptions', action: 'show', as: 'prescription'
+
+  # UPDATE
+  get '/prescriptions/:id/edit', controller: 'prescriptions', action: 'edit', as: 'edit_prescription'
+  patch '/prescriptions/:id', controller: 'prescriptions', action: 'update'
+
+  # DELETE
+  delete '/prescriptions/:id', controller: 'prescriptions', action: 'destroy'
+  #------------------------------
+
   devise_for :patients
   root "page#page"
   # Routes for the Condition resource:

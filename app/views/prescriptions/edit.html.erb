@@ -1,0 +1,39 @@
+<div class="page-header">
+  <h1>Editing Prescription #<%= @prescription.id %></h1>
+</div>
+
+<%= form_tag(prescription_url(@prescription), method: 'patch', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :doc_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= number_field_tag :doc_id, @prescription.doc_id, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :medication_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= number_field_tag :medication_id, @prescription.medication_id, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :patient_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= number_field_tag :patient_id, @prescription.patient_id, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :prescription_date, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :prescription_date, @prescription.prescription_date, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Update Prescription", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
