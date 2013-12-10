@@ -15,6 +15,7 @@
       <th>Date last filled</th>
       <th>Date next refill</th>
       <th>Doctor</th>
+      <th>Patient ID</th>
       <th></th>
       <th></th>
       <th></th>
@@ -32,6 +33,7 @@
         <td><%= medication.date_last_filled %></td>
         <td><%= medication.date_next_refill %></td>
         <td><%= medication.doctor %></td>
+        <td><%= current_patient.id%></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, medication_url(medication), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_medication_url(medication), class: 'btn btn-warning' %></td>
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, medication_url(medication), method: 'delete', data: { confirm: "Do you really want to delete this medication?" }, class: 'btn btn-danger' %></td>

@@ -10,6 +10,7 @@
       <th>Allergies</th>
       <th>Allergy severity</th>
       <th>Allergy classification</th>
+      <th>Patient ID</th>
       <th></th>
       <th></th>
       <th></th>
@@ -22,6 +23,7 @@
         <td><%= allergy.allergies %></td>
         <td><%= allergy.allergy_severity %></td>
         <td><%= allergy.allergy_classification %></td>
+        <td><%= current_patient.id %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, allergy_url(allergy), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_allergy_url(allergy), class: 'btn btn-warning' %></td>
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, allergy_url(allergy), method: 'delete', data: { confirm: "Do you really want to delete this allergy?" }, class: 'btn btn-danger' %></td>

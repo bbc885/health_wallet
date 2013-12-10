@@ -9,6 +9,7 @@
     <tr>
       <th>Med conditions</th>
       <th>Medication name</th>
+      <th>Patient ID</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= condition.med_conditions %></td>
         <td><%= condition.medication_name %></td>
+        <td><%= current_patient.id %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, condition_url(condition), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_condition_url(condition), class: 'btn btn-warning' %></td>
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, condition_url(condition), method: 'delete', data: { confirm: "Do you really want to delete this condition?" }, class: 'btn btn-danger' %></td>

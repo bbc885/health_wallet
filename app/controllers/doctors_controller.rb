@@ -21,6 +21,7 @@ class DoctorsController < ApplicationController
     @doctor.city = params[:city]
     @doctor.state = params[:state]
     @doctor.zip = params[:zip]
+    @doctor.patient_id = current_patient.id
 
     if @doctor.save
       redirect_to doctors_url, notice: "Doctor created successfully."
@@ -43,6 +44,7 @@ class DoctorsController < ApplicationController
     @doctor.city = params[:city]
     @doctor.state = params[:state]
     @doctor.zip = params[:zip]
+    @doctor.patient_id = current_patient.id
 
     if @doctor.save
       redirect_to doctors_url, notice: "Doctor updated successfully."

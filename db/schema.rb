@@ -11,39 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209022752) do
+ActiveRecord::Schema.define(version: 20131209223521) do
 
   create_table "allergies", force: true do |t|
-    t.string "allergies"
-    t.string "allergy_severity"
-    t.string "allergy_classification"
+    t.string  "allergies"
+    t.string  "allergy_severity"
+    t.string  "allergy_classification"
+    t.integer "patient_id"
   end
 
   create_table "conditions", force: true do |t|
-    t.string "med_conditions"
-    t.string "medication_name"
+    t.string  "med_conditions"
+    t.string  "medication_name"
+    t.integer "patient_id"
   end
 
   create_table "doctors", force: true do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "doctor"
-    t.string "specialty"
-    t.string "street_addr"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "doctor"
+    t.string  "specialty"
+    t.string  "street_addr"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zip"
+    t.integer "patient_id"
   end
 
   create_table "medications", force: true do |t|
-    t.string "medication_name"
-    t.string "dosage_amt"
-    t.string "dosage_daily_frequency"
-    t.string "dosage_daily_time"
-    t.string "dosage_duration"
-    t.date   "date_last_filled"
-    t.date   "date_next_refill"
-    t.string "doctor"
+    t.string  "medication_name"
+    t.string  "dosage_amt"
+    t.string  "dosage_daily_frequency"
+    t.string  "dosage_daily_time"
+    t.string  "dosage_duration"
+    t.date    "date_last_filled"
+    t.date    "date_next_refill"
+    t.string  "doctor"
+    t.integer "patient_id"
   end
 
   create_table "patients", force: true do |t|

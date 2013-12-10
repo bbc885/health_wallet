@@ -38,33 +38,7 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <%= label_tag :medication, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= text_field_tag :medication, @patient.medication, class: 'form-control' %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag :allergies, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= text_field_tag :allergies, @patient.allergies, class: 'form-control' %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag :doctor, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= text_field_tag :doctor, @patient.doctor, class: 'form-control' %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag :med_conditions, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= text_field_tag :med_conditions, @patient.med_conditions, class: 'form-control' %>
-    </div>
-  </div>
+   
 
   <div class="form-group">
     <%= label_tag :image_url, nil, class: 'col-md-2 control-label' %>
@@ -72,6 +46,13 @@
       <%= text_field_tag :image_url, @patient.img_url, class: 'form-control' %>
     </div>
   </div>
+
+  <!--<div class="form-group">
+    <%= label_tag :patient_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :patient_id, @patient.id, class: 'form-control' %>
+    </div>
+  </div>-->
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-6">

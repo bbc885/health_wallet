@@ -15,6 +15,7 @@
       <th>City</th>
       <th>State</th>
       <th>Zip</th>
+      <th>Patient ID</th>
       <th></th>
       <th></th>
       <th></th>
@@ -32,6 +33,7 @@
         <td><%= doctor.city %></td>
         <td><%= doctor.state %></td>
         <td><%= doctor.zip %></td>
+        <td><%= current_patient.id %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, doctor_url(doctor), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_doctor_url(doctor), class: 'btn btn-warning' %></td>
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, doctor_url(doctor), method: 'delete', data: { confirm: "Do you really want to delete this doctor?" }, class: 'btn btn-danger' %></td>

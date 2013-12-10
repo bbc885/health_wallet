@@ -16,6 +16,7 @@ class AllergiesController < ApplicationController
     @allergy.allergies = params[:allergies]
     @allergy.allergy_severity = params[:allergy_severity]
     @allergy.allergy_classification = params[:allergy_classification]
+    @allergy.patient_id = current_patient.id
 
     if @allergy.save
       redirect_to allergies_url, notice: "Allergy created successfully."
@@ -33,6 +34,7 @@ class AllergiesController < ApplicationController
     @allergy.allergies = params[:allergies]
     @allergy.allergy_severity = params[:allergy_severity]
     @allergy.allergy_classification = params[:allergy_classification]
+    @allergy.patient_id = current_patient.id
 
     if @allergy.save
       redirect_to allergies_url, notice: "Allergy updated successfully."

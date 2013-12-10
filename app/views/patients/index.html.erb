@@ -17,6 +17,7 @@
       <th>Doctor</th>
       <th>Med conditions</th>
       <th>X-Rays</th>
+      <th>Patient ID</th>
       <th></th>
       <th></th>
       <th></th>
@@ -24,23 +25,20 @@
   </thead>
 
   <tbody>
-    <% @patients.each do |patient| %>
       <tr>
-        <td><%= patient.First_name %></td>
-        <td><%= patient.last_name %></td>
-        <td><%= patient.date_of_birth %></td>
-        <td><%= patient.gender %></td>
-        <td><%= patient.blood_type %></td>
-        <td><%= patient.medication %></td>
-        <td><%= patient.allergies %></td>
-        <td><%= patient.doctor %></td>
-        <td><%= patient.med_conditions %></td>
-        <td><%= image_tag patient.img_url, width: 200, class: "img-square" %></td>
-        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, patient_url(patient), class: 'btn btn-primary' %></td>
-        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_patient_url(patient), class: 'btn btn-warning' %></td>
-        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, patient_url(patient), method: 'delete', data: { confirm: "Do you really want to delete this patient?" }, class: 'btn btn-danger' %></td>
+        <td><%= @patient.First_name %></td>
+        <td><%= @patient.last_name %></td>
+        <td><%= @patient.date_of_birth %></td>
+        <td><%= @patient.gender %></td>
+        <td><%= @patient.blood_type %></td>
+        <td><%= @m %></td>
+        <td><%= @a %></td>
+        <td><%= @d %></td>
+        <td><%= @c %></td>
+        <td><%= image_tag @patient.img_url, width: 200, class: "img-square" %></td>
+        <td><%= @patient.id %></td>
+     
       </tr>
-    <% end %>
   </tbody>
 </table>
 

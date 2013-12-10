@@ -15,6 +15,7 @@ class ConditionsController < ApplicationController
     @condition = Condition.new
     @condition.med_conditions = params[:med_conditions]
     @condition.medication_name = params[:medication_name]
+    @condition.patient_id = current_patient.id
 
     if @condition.save
       redirect_to conditions_url, notice: "Condition created successfully."
@@ -31,6 +32,7 @@ class ConditionsController < ApplicationController
     @condition = Condition.find_by(id: params[:id])
     @condition.med_conditions = params[:med_conditions]
     @condition.medication_name = params[:medication_name]
+    @condition.patient_id = current_patient.id
 
     if @condition.save
       redirect_to conditions_url, notice: "Condition updated successfully."

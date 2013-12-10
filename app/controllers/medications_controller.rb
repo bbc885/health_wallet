@@ -21,6 +21,7 @@ class MedicationsController < ApplicationController
     @medication.date_last_filled = params[:date_last_filled]
     @medication.date_next_refill = params[:date_next_refill]
     @medication.doctor = params[:doctor]
+    @medication.patient_id = current_patient.id
 
     if @medication.save
       redirect_to medications_url, notice: "Medication created successfully."
@@ -43,6 +44,7 @@ class MedicationsController < ApplicationController
     @medication.date_last_filled = params[:date_last_filled]
     @medication.date_next_refill = params[:date_next_refill]
     @medication.doctor = params[:doctor]
+    @medication.patient_id = current_patient.id
 
     if @medication.save
       redirect_to medications_url, notice: "Medication updated successfully."
