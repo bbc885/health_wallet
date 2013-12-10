@@ -8,4 +8,6 @@ has_many :medications
 has_many :doctors
 has_many :allergies
 has_many :conditions
+validates :First_name, :presence => true
+validates :last_name, :presence => true
 end
