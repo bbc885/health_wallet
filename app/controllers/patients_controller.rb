@@ -43,7 +43,7 @@ class PatientsController < ApplicationController
     #@patient.allergies = params[:allergies]
     #@patient.doctor = params[:doctor]
     #@patient.med_conditions = params[:med_conditions]
-    @patient.img_url = params[:img_url]
+    #@patient.img_url = params[:img_url]
     @patient.patient_id = current_patient.id
 
     if @patient.save
@@ -68,7 +68,7 @@ class PatientsController < ApplicationController
     #@patient.allergies = params[:allergies]
     #@patient.doctor = params[:doctor]
     #@patient.med_conditions = params[:med_conditions]
-    @patient.img_url = params[:img_url]
+    #@patient.img_url = params[:img_url]
     #@patient.patient_id = current_patient.id
     
     if @patient.save
